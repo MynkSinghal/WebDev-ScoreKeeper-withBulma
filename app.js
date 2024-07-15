@@ -17,6 +17,8 @@ let isGameOver = false;
 function updateScores(player, opponent) {
     if (!isGameOver) {
         player.score += 1;
+        player.display.textContent = player.score;
+        opponent.display.textContent = opponent.score;
         if (player.score === winningScore) {
             isGameOver = true;
             player.display.classList.add('has-text-success');
@@ -24,7 +26,6 @@ function updateScores(player, opponent) {
             player.button.disabled = true;
             opponent.button.disabled = true;
         }
-        player.display.textContent = player.score;
     }
 }
 
